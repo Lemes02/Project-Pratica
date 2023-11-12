@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inside Daltonismo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white; 
+    }
+
+    .inside-daltonismo-header {
+      background-color: #007bff; 
+      color: #fff; 
+      padding: 16px 20px; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      position: fixed;
+      top: 0;
+    }
+
+    .logo {
+      padding-left: 15px; 
+    }
+
+    .menu {
+      display: flex;
+      align-items:center;
+      gap: 20px;
+      text-transform: uppercase;
+  
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 17px; 
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin-top: 50px; 
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      border: 4px solid #007bff;
+      margin: 10px;
+      padding: 10px;
+      width: calc(33.33% - 20px);
+      cursor: pointer;
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .inner-card {
+      display: none;
+      background-color: #FFF;
+      border-radius: 5px;
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      max-height: 200px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #007bff #007bff;
+      text-align: justify;
+      color: black;
+    }
+
+    .card.active .inner-card {
+      display: block;
+    }
+
+    .inner-card::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .inner-card::-webkit-scrollbar-thumb {
+      background-color: #007bff;
+      border-radius: 4px;
+    }
+
+    .card:nth-child(2) {
+      background-color: white;
+    }
+
+    .card:nth-child(3) {
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="inside-daltonismo-header">
+    <div class="logo">
+      <img src="/download-removebg-preview.png" alt="Logo" height="45">
+    </div>
+    <div class="menu">
+      <a href="#HOME">Home</a>
+      <a href="#SOBRE">Sobre</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="card" onclick="toggleCard(1)">
+      <h2>O que é o Daltonismo?</h2>
+      <p>Clique aqui 🍂</p>
+      <div class="inner-card">
+        <p>O daltonismo, também conhecido como deficiência de visão de cores, é uma condição visual que torna difícil para uma pessoa distinguir certas cores, principalmente as cores vermelha e verde. Isso acontece devido a uma anomalia nas células sensíveis à luz (cones) na retina do olho. Os cones são responsáveis por detectar diferentes comprimentos de onda de luz e, em pessoas com daltonismo, essas células não funcionam adequadamente. O daltonismo é uma condição genética que pode ser herdada dos pais e afeta predominantemente homens, embora as mulheres também possam ser portadoras da anomalia genética.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(2)">
+      <h2>Tipos de Daltonismo!</h2>
+      <p>Clique aqui ✨</p>
+      <div class="inner-card">
+        <p>Existem vários tipos de daltonismo, sendo os mais comuns:
+
+          <ul>
+            <li><strong>Protanopia:</strong> Pessoas com protanopia têm dificuldade em distinguir entre vermelho e verde. Isso ocorre porque seus cones sensíveis ao vermelho estão ausentes ou não funcionam corretamente.</li>
+            <li><strong>Deuteranopia:</strong> Pessoas com deuteranopia também têm dificuldade em distinguir entre vermelho e verde. Neste caso, os cones sensíveis ao verde não funcionam corretamente.</li>
+            <li><strong>Tritanopia:</strong> Este é um tipo mais raro de daltonismo, em que as pessoas têm dificuldade em distinguir entre azul e amarelo devido a problemas com os cones sensíveis ao azul.</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(3)">
+      <h2>Tratamentos! </h2>
+      <p>Clique aqui 🧬</p>
+      <div class="inner-card">
+        <p>O daltonismo é uma condição visual para a qual não existe uma cura completa. No entanto, dependendo do tipo e da gravidade do daltonismo, algumas medidas podem ser tomadas para ajudar a melhorar a qualidade de vida das pessoas afetadas. É importante destacar que o tratamento não restaurará a visão normal das cores, mas pode facilitar a distinção de cores e minimizar os desafios associados. Algumas abordagens incluem:
+
+          <ul>
+            <li><strong>Óculos de correção:</strong> Lentes de contato ou óculos especiais, conhecidos como "óculos para daltonismo" ou "óculos para visão de cores", podem ser usados para melhorar a percepção das cores. Eles não são uma cura, mas podem ajudar a distinguir melhor as cores, especialmente em situações cotidianas.</li>
+            <li><strong>Tecnologia assistiva:</strong> Existem dispositivos e aplicativos que podem ajudar as pessoas com daltonismo a identificar cores. Alguns aplicativos para smartphones, por exemplo, podem usar a câmera para identificar cores e fornecer informações sobre elas.</li>
+            <li><strong>Treinamento:</strong> Algumas pessoas com daltonismo podem se beneficiar de treinamento especializado que ajuda a identificar e diferenciar cores. Isso pode ser realizado com um oftalmologista ou terapeuta ocupacional.</li>
+            <li><strong>Acomodações no ambiente de trabalho ou na escola:</strong> Pessoas com daltonismo podem solicitar acomodações no ambiente de trabalho ou na escola, como a escolha de cores específicas em gráficos ou documentos para facilitar a compreensão.</li>
+            <li><strong>Conscientização:</strong> A conscientização sobre a condição e a educação sobre como adaptar o ambiente podem ser úteis tanto para a pessoa com daltonismo quanto para aqueles ao seu redor.</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleCard(cardNumber) {
+      var card = document.querySelector('.card:nth-child(' + cardNumber + ')');
+      card.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

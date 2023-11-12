@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sobre Daltonismo</title>
+    <link rel="stylesheet" href="/peguntinhas/style.css">
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="../img/logo_daltonismo-removebg-preview.png" alt="Logo Inside Daltonismo">
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="../sobre/index.html">Sobre</a></li>
+                <li><a href="#">Mais sobre Daltonismo</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="quiz-container">
+        <div class="quiz-page show">
+            <h1>Perguntas sobre Daltonismo - Página 1</h1>
+            <ul class="questions">
+                <li class="question">Qual a cor de uma maçã?
+                    <form class="question-form">
+                        <label>
+                            <input type="radio" name="resposta1" value="1"> Vermelha
+                        </label>
+                        <label>
+                            <input type="radio" name="resposta1" value="0"> Verde
+                        </label>
+                    </form>
+                </li>
+                <li class="question">Qual a cor de um semáforo no sinal verde?
+                    <form class="question-form">
+                        <label>
+                            <input type="radio" name="resposta2" value="0"> Vermelho
+                        </label>
+                        <label>
+                            <input type="radio" name="resposta2" value="1"> Verde
+                        </label>
+                    </form>
+                </li>
+                <li class="question">Qual a cor de uma laranja?
+                    <form class="question-form">
+                        <label>
+                            <input type="radio" name="resposta3" value="1"> Laranja
+                        </label>
+                        <label>
+                            <input type="radio" name="resposta3" value="0"> Verde
+                        </label>
+                    </form>
+                </li>
+            </ul>
+            <button class="next-button">Próxima Página</button>
+        </div>
+        <div class="quiz-page ">
+            <h1>Perguntas sobre Daltonismo - Página 2</h1>
+            <ul class="questions">
+                <li class="question">Qual a cor do céu em um dia ensolarado?</li>
+                <li class="question">Qual a cor de uma banana madura?</li>
+                <li class="question">Qual a cor de uma folha de grama saudável?</li>
+            </ul>
+            <button class="next-button">Próxima Página</button>
+        </div>
+        <div class="quiz-page">
+            <h1>Perguntas sobre Daltonismo - Página 3</h1>
+            <ul class="questions">
+                <li class="question">Qual a cor de uma rosa vermelha?</li>
+                <li class="question">Qual a cor de um lápis de cor azul?</li>
+                <li class="question">Qual a cor de uma tangerina?</li>
+            </ul>
+            <button class="finish-button">Finalizar Quiz</button>
+        </div>
+    </main>
+    <script>
+        const quizPages = document.querySelectorAll('.quiz-page');
+        const nextButtons = document.querySelectorAll('.next-button');
+        const finishButton = document.querySelector('.finish-button');
+        let currentPageIndex = 0;
+        const respostas = [];
+    
+        function showNextPage() {
+            const currentPage = quizPages[currentPageIndex];
+            const selectedRadios = currentPage.querySelectorAll('input[type="radio"]:checked');
+    
+            selectedRadios.forEach(radio => {
+                respostas.push(radio.value);
+            });
+    
+            currentPage.classList.remove('show');
+            currentPageIndex++;
+    
+            if (currentPageIndex === quizPages.length - 1) {
+                finishButton.style.display = 'block';
+                nextButtons.forEach(button => {
+                    button.style.display = 'none';
+                });
+            }
+    
+            quizPages[currentPageIndex].classList.add('show');
+        }
+    
+        nextButtons.forEach(button => {
+            button.addEventListener('click', showNextPage);
+        });
+    
+        finishButton.addEventListener('click', () => {
+            alert('Respostas do usuário: ' + respostas.join(', '));
+        });
+
+        console.log('oi eu sou leo')
+    </script>
+</body>
+</html>
